@@ -1,8 +1,15 @@
 import express from "express";
+
 import { connectDB } from "./utils/features.js";
+
 import dotenv from "dotenv";
+
 import { errorMiddleware } from "./middlewares/error.js";
+
+
 import cookieParser from "cookie-parser";
+
+
 import { Server } from "socket.io";
 import { createServer } from "http";
 import { v4 as uuid } from "uuid";
@@ -57,6 +64,7 @@ app.set("io", io);
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
+
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/chat", chatRoute);
